@@ -32,7 +32,6 @@ void sendToController(BreachType breachType) {
 
 void sendToEmail(BreachType breachType) 
 {
-  const char* recepient = "a.b@c.com";
   for(int sendToEmailMessageInfoIndex = 0; sendToEmailMessageInfoIndex<=1 ;sendToEmailMessageInfoIndex++)
   {
 	if(sendToEmailMessageInfo[sendToEmailMessageInfoIndex].breachtype == breachType)
