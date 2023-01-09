@@ -2,13 +2,13 @@
 #include<stdio.h>
 
 
-sendToEmailMessage sendToEmailMessageInfo [] ={
+const sendToEmailMessage sendToEmailMessageInfo [] ={
 	{TOO_LOW,"To:  a.b@c.com","Hi, the temperature is too low\n"},
 	{TOO_HIGH,"To:  a.b@c.com","Hi, the temperature is too high\n"}
 };
 
 
-AlertTable AlertTableInfo[] ={
+const AlertTable AlertTableInfo[] ={
 	{TO_CONTROLLER,&sendToController},
 	{TO_EMAIL,&sendToController }
 };
