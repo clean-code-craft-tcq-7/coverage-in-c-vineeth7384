@@ -4,11 +4,11 @@
 #include "BreachClassify.h"
 
 void checkAndAlert(
-    AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC)
+    AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC,char* msgBufresult)
 {
 
   BreachType breachType = classifyTemperatureBreach(batteryChar.coolingType, temperatureInC);
-  SendAlertMessage(alertTarget, breachType);
+  SendAlertMessage(alertTarget, breachType,msgBufresult);
 }
 
 

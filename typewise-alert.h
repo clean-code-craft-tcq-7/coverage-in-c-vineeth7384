@@ -22,5 +22,5 @@ typedef struct {
 } BatteryCharacter;
 
 void checkAndAlert(
-  AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
+    AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC,char* msgBufresult);
 

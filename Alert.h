@@ -2,7 +2,7 @@
 typedef struct
 {
 	AlertTarget Target ;
-	void (*AlertCallback)(BreachType);
+	void (*AlertCallback)(BreachType,char*);
 }AlertTable;
 typedef struct
 {
@@ -10,7 +10,7 @@ typedef struct
    const char*FirstMessage;
    const char*SecondMessage;
 }sendToEmailMessage;
-void sendToController(BreachType breachType);
-void sendToEmail(BreachType breachType);
-void SendAlertMessage(AlertTarget alertTarget,BreachType breachType);
+void sendToController(BreachType breachType,char* msgBufresult);
+void sendToEmail(BreachType breachType,char* msgBufresult);
+void SendAlertMessage(AlertTarget alertTarget,BreachType breachType,char* msgBufresult);
 #define MAXALERTTYPE 2
