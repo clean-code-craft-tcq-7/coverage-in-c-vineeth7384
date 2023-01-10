@@ -3,9 +3,7 @@
 #include "test/catch.hpp"
 #include "typewise-alert.h"
 #include"Check_Limit.h"
-TEST_CASE("infers the breach according to limits") {
-  REQUIRE(inferBreach(12, 20, 30) == TOO_LOW);
-}
+
 TEST_CASE("infers the breach according to limits") {
   REQUIRE(inferBreach(12, 20, 30) == TOO_LOW);
 }
@@ -16,17 +14,18 @@ TEST_CASE("infers the breach according to Normal") {
   REQUIRE(inferBreach(20, 10, 40) == NORMAL);
 }
 TEST_CASE(" SendAlert messages to controller in high state") {
-  REQUIRE(SendAlertMessage(TO_CONTROLLER, TOO_HIGH);
+  REQUIRE(SendAlertMessage(TO_CONTROLLER, TOO_HIGH));
 }
 TEST_CASE(" SendAlert messages to controller in low state") {
-  REQUIRE(SendAlertMessage(TO_CONTROLLER, TOO_LOW);
+  REQUIRE(SendAlertMessage(TO_CONTROLLER, TOO_LOW));
 }
 TEST_CASE(" SendAlert messages to email in high state") {
-  REQUIRE(SendAlertMessage(TO_EMAIL, TOO_HIGH);
+  REQUIRE(SendAlertMessage(TO_EMAIL, TOO_HIGH));
 }
 TEST_CASE(" SendAlert messages to controller in low state") {
-  REQUIRE(SendAlertMessage(TO_EMAIL, TOO_LOW);
+  REQUIRE(SendAlertMessage(TO_EMAIL, TOO_LOW));
 }
+
 
 
 
