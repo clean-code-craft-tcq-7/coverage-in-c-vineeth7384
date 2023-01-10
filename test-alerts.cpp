@@ -18,6 +18,12 @@ TEST_CASE("infers the breach according to high") {
 TEST_CASE("classifyTemperatureBreach passive cooling") {
   REQUIRE(classifyTemperatureBreach(PASSIVE_COOLING, 30) == NORMAL);
 }
+TEST_CASE("classifyTemperatureBreach passive cooling") {
+  REQUIRE(classifyTemperatureBreach(HI_ACTIVE_COOLING, 30) == NORMAL);
+}
+TEST_CASE("classifyTemperatureBreach passive cooling") {
+  REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, 30) == NORMAL);
+}
 
 
 
