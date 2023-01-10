@@ -52,7 +52,7 @@ checkAndAlert(TO_CONTROLLER,batteryCharTest,60,&buf[0]);
  REQUIRE(strcmp( buf,src)!=0);
   }
 
-TEST_CASE("send email alert high") {
+TEST_CASE("send email alert low") {
   char*src = "Hi, the temperature is too low\n";
   BatteryCharacter batteryCharTest;
 batteryCharTest.coolingType = PASSIVE_COOLING;
