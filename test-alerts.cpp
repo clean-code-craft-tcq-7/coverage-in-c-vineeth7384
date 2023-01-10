@@ -35,7 +35,7 @@ TEST_CASE("classifyTemperatureBreach medactive cooling Too high") {
   REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, 60) == TOO_HIGH);
 }
 char buf[50];
-const char*src = "Hi, the temperature is too high\n"
+const char*src = "Hi, the temperature is too high\n";
 BatteryCharacter batteryCharTest;
 batteryCharTest.coolingType = PASSIVE_COOLING;
 TEST_CASE("send email alert high") {
