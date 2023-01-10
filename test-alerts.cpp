@@ -5,6 +5,7 @@
 #include"Check_Limit.h"
 #include "Alert.h"
 #include "BreachClassify.h"
+#include "string.h"
 
 TEST_CASE("infers the breach according to limits") {
   REQUIRE(inferBreach(12, 20, 30) == TOO_LOW);
@@ -33,5 +34,13 @@ TEST_CASE("classifyTemperatureBreach acive cooling Too high") {
 TEST_CASE("classifyTemperatureBreach medactive cooling Too high") {
   REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, 60) == TOO_HIGH);
 }
-
+char buf[50];
+const char*src = "To:  a.b@c.com","Hi, the temperature is too high\n"
+BatteryCharacter batteryCharTest;
+batteryCharTest.coolingType = PASSIVE_COOLING;
+TEST_CASE("classifyTemperatureBreach acive cooling Too high") {
+checkAndAlert(TO_EMAIL,batteryCharTest,50,&buf[0]);
+ REQUIRE(strcmp( buf,src)==0);
+  }
+  
 
