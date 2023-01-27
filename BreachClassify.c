@@ -7,10 +7,11 @@ const CoolingInfo CoolingInfoTable[]= {
     {MED_ACTIVE_COOLING,MED_ACTIVE_COOLING_LOWERLIMIT,MED_ACTIVE_COOLING_UPPERLIMIT},
 };
 
-BreachType classifyTemperatureBreach(
-   CoolingType coolingType, double temperatureInC) {
+int FindCoolingLimit (CoolingType coolingType)
+{
    int lowerLimit = 0;
    int upperLimit = 0;
+    
    for ( int CoolingInfoTableIndex = 0; CoolingInfoTableIndex < MAXIMUM_COOLING_TYPE;CoolingInfoTableIndex++)
    {
       if(CoolingInfoTable[CoolingInfoTableIndex].coolingtype == coolingType)
@@ -20,6 +21,19 @@ BreachType classifyTemperatureBreach(
          break;
       }
    }
+    
+    return lowerLimit,upperLimit ;
+    
+
+}
+
+BreachType classifyTemperatureBreach(
+   CoolingType coolingType, double temperatureInC) {
+   int lowerLimit = 0;
+   int upperLimit = 0;
+    
+   lowerLimit,upperLimit = FindCoolingLimit (coolingType);
+
   
    return inferBreach(temperatureInC, lowerLimit, upperLimit);
 }
